@@ -5,7 +5,8 @@
     "H5PEditor": true
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "es2020": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
