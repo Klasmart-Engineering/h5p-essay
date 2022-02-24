@@ -117,6 +117,16 @@ H5P.Essay = function ($, Question) {
       this.params.behaviour.percentagePassing * scoreMax / 100 || 0);
 
     this.solution = this.buildSolution();
+
+    // Needs extra resize when DOM is attached
+    this.on('domChanged', function () {
+      const that = this;
+
+      clearTimeout(that.domChangedTimeout);
+      that.domChangedTimeout = setTimeout(() => {
+        that.trigger('resize');
+      }, 50);
+    });
   }
 
   // Extends Question
