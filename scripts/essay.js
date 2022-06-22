@@ -699,13 +699,10 @@ H5P.Essay = function ($, Question) {
     }
 
     // We need the retry button if the mastering score has not been reached or scoring is irrelevant
-    if (score < this.getMaxScore() || this.params.behaviour.ignoreScoring || this.getMaxScore() === 0) {
+    if (score <= this.getMaxScore() || this.params.behaviour.ignoreScoring || this.getMaxScore() === 0) {
       if (this.params.behaviour.enableRetry) {
         this.showButton('try-again');
       }
-    }
-    else {
-      this.hideButton('try-again');
     }
   };
 
